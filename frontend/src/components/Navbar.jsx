@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { MessageCircle, Home } from 'lucide-react';
 
 const defaultNavItems = [
+  { label: 'Home', path: '/', icon: Home },
   { label: 'Chat', path: '/chat', icon: MessageCircle },
 ];
 
