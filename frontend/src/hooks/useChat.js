@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react';
 import { chatService } from '../services/chatService';
-import { initialChatMessages } from '../data/mockChat';
+
+const welcomeMessage = {
+  id: 1,
+  role: 'assistant',
+  content: 'Welcome to GMR Real Estate AI. Tell me your budget, city, or BHK preference and I will help you find the right home.'
+};
 
 export default function useChat() {
-  const [messages, setMessages] = useState(initialChatMessages);
+  const [messages, setMessages] = useState([welcomeMessage]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    setMessages(initialChatMessages);
+    setMessages([welcomeMessage]);
   }, []);
 
-  const clearChat = () => setMessages(initialChatMessages);
+  const clearChat = () => setMessages([welcomeMessage]);
 
   const sendMessage = async () => {
     const trimmed = input.trim();
